@@ -8,9 +8,7 @@ public class BankAccount {
     String customerID;
     String customerName;
 
-    public BankAccount(int balance, int previousTransaction, String customerID, String customerName) {
-        this.balance = balance;
-        this.previousTransaction = previousTransaction;
+    public BankAccount(String customerID, String customerName) {
         this.customerID = customerID;
         this.customerName = customerName;
     }
@@ -70,8 +68,8 @@ public class BankAccount {
         do {
             System.out.println("=============================================================");
             System.out.println("Enter an option:");
-            System.out.println("=============================================================");
             option = scanner.next().charAt(0);
+            System.out.println("=============================================================");
 
             switch(option) {
                 case 'A':
@@ -89,6 +87,10 @@ public class BankAccount {
                     break;
                 case 'D':
                     this.cardTransactionMessage();
+                    break;
+                case 'E':
+                    System.out.println("\n");
+                    System.out.println("You're out!");
                     break;
                 default:
                     System.out.println("Invalid option! Please use command from list!");
