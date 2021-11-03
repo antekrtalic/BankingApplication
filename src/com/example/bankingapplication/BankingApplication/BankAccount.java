@@ -1,5 +1,7 @@
 package com.example.bankingapplication.BankingApplication;
 
+import java.util.Scanner;
+
 public class BankAccount {
     int balance;
     int previousTransaction;
@@ -11,6 +13,14 @@ public class BankAccount {
         this.previousTransaction = previousTransaction;
         this.customerID = customerID;
         this.customerName = customerName;
+    }
+
+    public String getCustomerID() {
+        return this.customerID;
+    }
+
+    public String getCustomerName() {
+        return this.customerName;
     }
 
     public void deposit(int amount) {
@@ -37,5 +47,12 @@ public class BankAccount {
         } else if (this.previousTransaction < 0) {
             System.out.println("Withdraw: " + this.previousTransaction);
         }
+    }
+
+    public void showMenu() {
+        char option = '\0';
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome " + this.getCustomerName() + "!");
+        System.out.println("Your ");
     }
 }
